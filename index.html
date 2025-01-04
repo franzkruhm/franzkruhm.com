@@ -31,11 +31,31 @@ Please consider kind donation !<br>
 <b>Ko-fi:</b><a href="https://ko-fi.com/zanfr">https://ko-fi.com/zanfr</a> <br>
 <br></span>
 
- 
+<div id="app" style="height: 60vh">
+</div>
 <script src="https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js"></script>
     <script>
       const Webamp = window.Webamp;
       const webamp = new Webamp({
+	windowLayout: {
+          main: {
+            position: { top: 0, left: 0 },
+            shadeMode: true,
+            closed: false,
+          },
+          equalizer: {
+            position: { top: 230, left: 0 },
+            shadeMode: true,
+            closed: true,
+          },
+          playlist: {
+            position: { top: 28, left: 0 },
+            shadeMode: false,
+            size: { extraHeight: 3, extraWidth: 11 },
+            closed: true,
+          },
+        },
+        enableDoubleSizeMode: false,
         /**
          * Here we list three tracks. Note that the `metaData` fields and
          * duration are required to populate the playlist.  If any of those
@@ -45,26 +65,15 @@ Please consider kind donation !<br>
         initialTracks: [
           {
             metaData: {
-              artist: "DJ Mike Llama",
-              title: "Llama Whippin' Intro",
-            },
-            // NOTE: Your audio file must be served from the same domain as your HTML
-            // file, or served with permissive CORS HTTP headers:
-            // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-            url: "https://cdn.jsdelivr.net/gh/captbaritone/webamp@43434d82cfe0e37286dbbe0666072dc3190a83bc/mp3/llama-2.91.mp3",
-            duration: 5.322286,
-          },
-          {
-            metaData: {
               title: "track 01",
               artist: "",
             },
             // NOTE: Your audio file must be served from the same domain as your HTML
             // file, or served with permissive CORS HTTP headers:
             // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-            url: "https://github.com/franzkruhm/randomdata_zanfr/raw/refs/heads/main/Iguess.mp3",
-            duration: 555,
-          },
+            url: "https://raw.githubusercontent.com/franzkruhm/randomdata_zanfr/main/Iguess.mp3",
+	    duration: 555,
+          },		
         ],
       });
 
