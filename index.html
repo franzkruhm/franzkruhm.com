@@ -30,6 +30,50 @@
 Please consider kind donation !<br>
 <b>Ko-fi:</b><a href="https://ko-fi.com/zanfr">https://ko-fi.com/zanfr</a> <br>
 <br></span>
+
+ 
+<script src="https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js"></script>
+    <script>
+      const Webamp = window.Webamp;
+      const webamp = new Webamp({
+        /**
+         * Here we list three tracks. Note that the `metaData` fields and
+         * duration are required to populate the playlist.  If any of those
+         * fields are omitted, Webamp will download at least part of each file
+         * on initial page load in order to determine the missing information.
+         */
+        initialTracks: [
+          {
+            metaData: {
+              artist: "DJ Mike Llama",
+              title: "Llama Whippin' Intro",
+            },
+            // NOTE: Your audio file must be served from the same domain as your HTML
+            // file, or served with permissive CORS HTTP headers:
+            // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+            url: "https://cdn.jsdelivr.net/gh/captbaritone/webamp@43434d82cfe0e37286dbbe0666072dc3190a83bc/mp3/llama-2.91.mp3",
+            duration: 5.322286,
+          },
+          {
+            metaData: {
+              title: "track 01",
+              artist: "",
+            },
+            // NOTE: Your audio file must be served from the same domain as your HTML
+            // file, or served with permissive CORS HTTP headers:
+            // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+            url: "https://github.com/franzkruhm/randomdata_zanfr/raw/refs/heads/main/Iguess.mp3",
+            duration: 555,
+          },
+        ],
+      });
+
+      // Returns a promise indicating when it's done loading.
+      webamp.renderWhenReady(document.getElementById("app"));
+    </script>
+
+ 
+<br>
 &#12304;&#65279;&#65331;&#65345;&#65348;&#12288;&#65346;&#65359;&#65369;&#65363;&#12305;
 <br>
 &#24859;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;
